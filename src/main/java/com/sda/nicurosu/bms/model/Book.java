@@ -1,6 +1,8 @@
 package com.sda.nicurosu.bms.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
@@ -23,6 +25,9 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
+    @OneToMany(mappedBy = "book")
+    private List<Review> reviews;
 
     public Book() {
     }

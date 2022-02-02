@@ -2,6 +2,7 @@ package com.sda.nicurosu.bms.utils;
 
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
+import com.sda.nicurosu.bms.model.Review;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -25,5 +26,6 @@ public class SessionManager extends AbstractSessionManager {
     protected void setAnnotatedClasses(Configuration configuration) {
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Book.class);
+        configuration.addAnnotatedClass(Review.class);
     }
 }

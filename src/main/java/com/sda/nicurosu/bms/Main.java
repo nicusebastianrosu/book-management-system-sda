@@ -2,6 +2,7 @@ package com.sda.nicurosu.bms;
 
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
+import com.sda.nicurosu.bms.model.Review;
 import com.sda.nicurosu.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,6 +27,14 @@ public class Main {
         book.setDescription("Povesti");
 
         session.save(book);
+
+        Review review = new Review();
+        review.setBook(book);
+        review.setScore("10");
+        review.setComment("Nice book");
+
+        session.save(review);
+
 
         session.close();
 
