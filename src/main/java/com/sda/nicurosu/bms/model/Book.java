@@ -77,4 +77,12 @@ public class Book {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }

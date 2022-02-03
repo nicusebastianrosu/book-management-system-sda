@@ -1,5 +1,7 @@
 package com.sda.nicurosu.bms;
 
+import com.sda.nicurosu.bms.controller.BookController;
+import com.sda.nicurosu.bms.controller.BookControllerImpl;
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
 import com.sda.nicurosu.bms.model.Review;
@@ -7,38 +9,39 @@ import com.sda.nicurosu.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.Scanner;
+
 public class Main {
+
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
-        System.out.println("Starting BMS");
-        SessionFactory sessionFactory = SessionManager.getSessionFactory();
+        BookController bookController = new BookControllerImpl();
+        System.out.println("Booking Management is Running! Starting !!!");
 
-        Session session = sessionFactory.openSession();
-
-        Author author = new Author();
-        author.setFirstName("Creanga");
-        author.setLastName("Ion");
-
-        session.save(author);
-
-        Book book = new Book();
-        book.setAuthor(author);
-        book.setTitle("Amintiri");
-        book.setIsbn("1111-1");
-        book.setDescription("Povesti");
-
-        session.save(book);
-
-        Review review = new Review();
-        review.setBook(book);
-        review.setScore("10");
-        review.setComment("Nice book");
-
-        session.save(review);
-
-
-        session.close();
+        String option = null;
+        do {
+            printMenu();
+            System.out.println("Please insert your option:");
+            option = SCANNER.nextLine();
+            switch (option) {
+                case "1":
+                    bookController.createBook();
+                    break;
+                case "EXIT":
+                    System.out.println("Finish, bye, bye");
+                    break;
+                default:
+                    System.out.println("Option is not valid!");
+            }
+        } while (option == null || !option.equals("EXIT"));
 
         SessionManager.shutDown();
 
+    }
+
+    private static void printMenu() {
+        System.out.println("1: CREATE BOOK");
+        System.out.println("EXIT: EXIT");
     }
 }
