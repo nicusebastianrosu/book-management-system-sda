@@ -1,5 +1,7 @@
 package com.sda.nicurosu.bms;
 
+import com.sda.nicurosu.bms.controller.AuthorController;
+import com.sda.nicurosu.bms.controller.AuthorControllerImpl;
 import com.sda.nicurosu.bms.controller.BookController;
 import com.sda.nicurosu.bms.controller.BookControllerImpl;
 import com.sda.nicurosu.bms.model.Author;
@@ -17,6 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         BookController bookController = new BookControllerImpl();
+        AuthorController authorController = new AuthorControllerImpl();
         System.out.println("Booking Management is Running! Starting !!!");
 
         String option = null;
@@ -28,6 +31,10 @@ public class Main {
                 case "1":
                     bookController.createBook();
                     break;
+                case "2":
+                    authorController.createAuthor();
+                    break;
+
                 case "EXIT":
                     System.out.println("Finish, bye, bye");
                     break;
@@ -42,6 +49,7 @@ public class Main {
 
     private static void printMenu() {
         System.out.println("1: CREATE BOOK");
+        System.out.println("2: Create author");
         System.out.println("EXIT: EXIT");
     }
 }
