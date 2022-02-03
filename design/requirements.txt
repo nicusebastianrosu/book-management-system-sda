@@ -19,7 +19,7 @@ Analiza cerintelor:
 - ADD REVIEW (ADDING A new review for one of the existing books)
 
 TASKS:
--BMS-1 create author;
+-BMS-1 create author;(DONE)
 -BMS-2 VIEW - view all the authors;
 -BMS-3 update author;
 -BMS-4 delete author;
