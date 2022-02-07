@@ -18,6 +18,7 @@ public class Main {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
+        SessionManager.getSessionFactory();
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
         System.out.println("Booking Management is Running! Starting !!!");
