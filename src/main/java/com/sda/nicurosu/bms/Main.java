@@ -27,15 +27,22 @@ public class Main {
             printMenu();
             System.out.println("Please insert your option:");
             option = SCANNER.nextLine();
-            switch (option) {
-                case "1":
+            MenuOption menuOption = findByOption(option);
+//            if (menuOption == null) {
+//                System.out.println("Option is not valid");
+//            } else {
+//
+//            }
+
+            switch (menuOption) {
+                case CREATE_BOOK:
                     bookController.createBook();
                     break;
-                case "2":
+                case CREATE_AUTHOR:
                     authorController.createAuthor();
                     break;
 
-                case "EXIT":
+                case EXIT:
                     System.out.println("Finish, bye, bye");
                     break;
                 default:
@@ -48,8 +55,25 @@ public class Main {
     }
 
     private static void printMenu() {
-        System.out.println("1: CREATE BOOK");
-        System.out.println("2: Create author");
-        System.out.println("EXIT: EXIT");
+        System.out.println("Menu:");
+        // MenuOption menuOption = MenuOption.CREATE_BOOK;
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (!menuOption.equals(MenuOption.UNDEFINED)) {
+                System.out.println(menuOption.getOption() + " -> " + menuOption.getDescription());
+            }
+        }
+
+        //System.out.println("1: CREATE BOOK");
+        //System.out.println("2: Create author");
+        //System.out.println("EXIT: EXIT");
+    }
+
+    public static MenuOption findByOption(String option) {
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (menuOption.getOption().equals(option)) {
+                return menuOption;
+            }
+        }
+        return MenuOption.UNDEFINED;
     }
 }
