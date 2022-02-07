@@ -1,8 +1,10 @@
 package com.sda.nicurosu.bms.controller;
 
+import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.service.AuthorService;
 import com.sda.nicurosu.bms.service.AuthorServiceImpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class AuthorControllerImpl implements AuthorController {
@@ -27,5 +29,17 @@ public class AuthorControllerImpl implements AuthorController {
         authorService.createAuthor(firstName, lastName);
 
 
+    }
+
+    @Override
+    public void viewAllAuthors() {
+        System.out.println("All authors:");
+        List<Author> authors = authorService.findAll();
+        for (Author author : authors) {
+            System.out.println("ID " + author.getId());
+            System.out.println("FirstName: " + author.getFirstName());
+            System.out.println("LastName: " + author.getLastName());
+            System.out.println("---------------------");
+        }
     }
 }

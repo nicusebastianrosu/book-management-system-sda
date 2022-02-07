@@ -44,6 +44,9 @@ public class Main {
                 case CREATE_BOOK_WITH_AUTHOR:
                     bookController.createBookWithAuthor();
                     break;
+                case VIEW_ALL_AUTHOR:
+                    authorController.viewAllAuthors();
+                    break;
                 case EXIT:
                     System.out.println("Finish, bye, bye");
                     break;

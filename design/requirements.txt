@@ -20,7 +20,7 @@ Analiza cerintelor:
 
 TASKS:
 -BMS-1 create author;(DONE)
--BMS-2 VIEW - view all the authors;
+-BMS-2 VIEW - view all the authors;DONE
 -BMS-3 update author;
 -BMS-4 delete author;
 
@@ -32,7 +32,7 @@ TASKS:
 -BMS-9 VIEW ALL REVIEWS
 -BMS-10 ADD REVIEW (ADDING A new review for one of the existing books)
 
--BMS 11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors);
+-BMS 11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors);DONE
 
 
 
