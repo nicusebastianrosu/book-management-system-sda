@@ -24,4 +24,12 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         }
         session.close();
     }
+
+    @Override
+    public Author findById(Integer id) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Author author = session.find(Author.class, id);
+        session.close();
+        return author;
+    }
 }

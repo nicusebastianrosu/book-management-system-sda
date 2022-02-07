@@ -5,4 +5,6 @@ import com.sda.nicurosu.bms.model.Author;
 public interface AuthorRepository {
 
     void createAuthor(Author author);
+
+    Author findById(Integer id);
 }
