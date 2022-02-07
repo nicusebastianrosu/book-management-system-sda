@@ -25,14 +25,15 @@ TASKS:
 -BMS-4 delete author;
 
 -BMS-5 create book : (DONE)
--BMS-6 VIEW - view all the books;
--BMS-7 update book;
--BMS-8 delete book;
+-BMS-6 VIEW - view all the books; homework
+-BMS-7 update book; HOMEWORK
+-BMS-8 delete book; HOMEWORK
 
--BMS-9 VIEW ALL REVIEWS
+-BMS-9 VIEW REVIEW FOR BOOK;
 -BMS-10 ADD REVIEW (ADDING A new review for one of the existing books)
 
 -BMS 11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors);DONE
+-BMS 12 IMPORT BOOKS WITH AUTHORS FROM A TEXT FILE;
 
 
 
