@@ -22,7 +22,7 @@ TASKS:
 -BMS-1 create author;(DONE)
 -BMS-2 VIEW - view all the authors;DONE
 -BMS-3 update author; done
--BMS-4 delete author;
+-BMS-4 delete author; done
 
 -BMS-5 create book : (DONE)
 -BMS-6 VIEW - view all the books; homework
