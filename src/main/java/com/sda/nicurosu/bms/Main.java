@@ -24,11 +24,11 @@ public class Main {
     public static void main(String[] args) {
         SessionManager.getSessionFactory();
 
-        AuthorService authorService = new AuthorServiceImpl();
-        authorService.importAuthorsFromFile();
-
-        BookService bookService = new BookServiceImpl();
-        bookService.importBooksFromFile();
+//        AuthorService authorService = new AuthorServiceImpl();
+//        authorService.importAuthorsFromFile();
+//
+//        BookService bookService = new BookServiceImpl();
+//        bookService.importBooksFromFile();
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
@@ -58,6 +58,9 @@ public class Main {
                     break;
                 case VIEW_ALL_AUTHOR:
                     authorController.viewAllAuthors();
+                    break;
+                case UPDATE_AUTHOR:
+                    authorController.updateAuthor();
                     break;
                 case EXIT:
                     System.out.println("Finish, bye, bye");

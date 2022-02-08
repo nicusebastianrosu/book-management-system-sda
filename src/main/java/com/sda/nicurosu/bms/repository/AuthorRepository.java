@@ -1,6 +1,7 @@
 package com.sda.nicurosu.bms.repository;
 
 import com.sda.nicurosu.bms.model.Author;
+import com.sda.nicurosu.bms.model.Book;
 
 import java.util.List;
 
@@ -11,4 +12,6 @@ public interface AuthorRepository extends BaseRepository<Author, Integer>{
     //Author findById(Integer id);
 
     List<Author> findAll();
+
+
 }

@@ -42,4 +42,22 @@ public class AuthorControllerImpl implements AuthorController {
             System.out.println("---------------------");
         }
     }
+
+    @Override
+    public void updateAuthor() {
+
+        System.out.println("Update Author");
+        System.out.println("Insert ID:");
+        int id = Integer.parseInt(SCANNER.nextLine());
+        System.out.println("First Name:");
+        String firstName = SCANNER.nextLine();
+        System.out.println("Last Name");
+        String lastName = SCANNER.nextLine();
+        try {
+            authorService.update(id, firstName, lastName);
+        } catch (Exception e) {
+            System.out.println("Author not found");
+        }
+
+    }
 }

@@ -1,6 +1,9 @@
 package com.sda.nicurosu.bms.repository;
 
 import com.sda.nicurosu.bms.model.Book;
+import com.sda.nicurosu.bms.utils.SessionManager;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implements BookRepository {
     public BookRepositoryImpl() {
@@ -24,4 +27,6 @@ public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implem
 //        session.close();
         createEntity(book);
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.sda.nicurosu.bms.service;
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.repository.AuthorRepository;
 import com.sda.nicurosu.bms.repository.AuthorRepositoryImpl;
+import com.sda.nicurosu.bms.service.exceptions.AuthorNotFoundException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -62,6 +63,18 @@ public class AuthorServiceImpl implements AuthorService {
                     });
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void update(Integer id, String firstName, String lastName) throws AuthorNotFoundException {
+        Author author = authorRepository.findById(id);
+        if (author != null) {
+            author.setFirstName(firstName);
+            author.setLastName(lastName);
+            authorRepository.update(author);
+        } else {
+            throw new AuthorNotFoundException("Author not found", id);
         }
     }
 }

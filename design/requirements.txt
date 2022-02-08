@@ -21,7 +21,7 @@ Analiza cerintelor:
 TASKS:
 -BMS-1 create author;(DONE)
 -BMS-2 VIEW - view all the authors;DONE
--BMS-3 update author;
+-BMS-3 update author; done
 -BMS-4 delete author;
 
 -BMS-5 create book : (DONE)
@@ -33,7 +33,7 @@ TASKS:
 -BMS-10 ADD REVIEW (ADDING A new review for one of the existing books)
 
 -BMS 11 CREATE BOOK WITH AUTHOR (adding a new book - and assigning one of the existing authors);DONE
--BMS 12 IMPORT BOOKS WITH AUTHORS FROM A TEXT FILE;
+-BMS 12 IMPORT BOOKS WITH AUTHORS FROM A TEXT FILE;DONE
 
 
 
