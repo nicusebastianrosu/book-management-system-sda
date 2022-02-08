@@ -1,11 +1,12 @@
 package com.sda.nicurosu.bms.repository;
 
 import com.sda.nicurosu.bms.model.Book;
-import com.sda.nicurosu.bms.utils.SessionManager;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
-public class BookRepositoryImpl extends BaseRepository<Book, Integer> implements BookRepository {
+public class BookRepositoryImpl extends BaseRepositoryImpl<Book, Integer> implements BookRepository {
+    public BookRepositoryImpl() {
+        super(Book.class);
+    }
+
     @Override
     public void createBook(Book book) {
 //        Session session = SessionManager.getSessionFactory().openSession();
