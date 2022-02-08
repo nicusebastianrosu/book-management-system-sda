@@ -3,6 +3,7 @@ package com.sda.nicurosu.bms.controller;
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.service.AuthorService;
 import com.sda.nicurosu.bms.service.AuthorServiceImpl;
+import com.sda.nicurosu.bms.service.exceptions.AuthorNotFoundException;
 
 import java.util.List;
 import java.util.Scanner;
@@ -59,5 +60,20 @@ public class AuthorControllerImpl implements AuthorController {
             System.out.println("Author not found");
         }
 
+    }
+
+    @Override
+    public void deleteAuthor() {
+        try {
+            System.out.println("DElete author:");
+            System.out.println("Insert ID for delete:");
+            int id = Integer.parseInt(SCANNER.nextLine());
+
+            authorService.delete(id);
+        } catch (AuthorNotFoundException e) {
+            System.out.println("Author not found");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid author id");
+        }
     }
 }

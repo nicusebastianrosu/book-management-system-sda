@@ -14,4 +14,6 @@ public interface AuthorService {
     void importAuthorsFromFile();
 
     void update(Integer id, String firstName, String lastName) throws AuthorNotFoundException;
+
+    void delete(Integer id) throws AuthorNotFoundException;
 }

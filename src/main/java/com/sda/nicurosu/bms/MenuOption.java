@@ -7,6 +7,7 @@ public enum MenuOption {
     CREATE_BOOK_WITH_AUTHOR("4", "Create book with author"),
     VIEW_ALL_AUTHOR("5", "VIEW ALL AUTHOR"),
     UPDATE_AUTHOR("6", "UPDATE AUTHOR"),
+    DELETE_AUTHOR("7", "DELETE AUTHOR"),
     EXIT("EXIT", "Close the application"),
     UNDEFINED("", "OPTION NOT FOUND");
 

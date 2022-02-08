@@ -55,4 +55,23 @@ public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {
 
     }
 
+    @Override
+    public void delete(T entity) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.delete(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+        session.close();
+
+    }
+
+
 }
