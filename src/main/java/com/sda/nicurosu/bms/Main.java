@@ -7,6 +7,10 @@ import com.sda.nicurosu.bms.controller.BookControllerImpl;
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
 import com.sda.nicurosu.bms.model.Review;
+import com.sda.nicurosu.bms.service.AuthorService;
+import com.sda.nicurosu.bms.service.AuthorServiceImpl;
+import com.sda.nicurosu.bms.service.BookService;
+import com.sda.nicurosu.bms.service.BookServiceImpl;
 import com.sda.nicurosu.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,6 +23,13 @@ public class Main {
 
     public static void main(String[] args) {
         SessionManager.getSessionFactory();
+
+        AuthorService authorService = new AuthorServiceImpl();
+        authorService.importAuthorsFromFile();
+
+        BookService bookService = new BookServiceImpl();
+        bookService.importBooksFromFile();
+
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
         System.out.println("Booking Management is Running! Starting !!!");

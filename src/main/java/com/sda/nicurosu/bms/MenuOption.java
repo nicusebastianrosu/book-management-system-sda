@@ -5,8 +5,8 @@ public enum MenuOption {
     CREATE_AUTHOR("2", "Create author"),
     CREATE_REVIEW("3", "Create review"),
     CREATE_BOOK_WITH_AUTHOR("4", "Create book with author"),
-    VIEW_ALL_AUTHOR("5","vIEW ALL AUTHOR"),
-    EXIT("Exit", "Close the application"),
+    VIEW_ALL_AUTHOR("5", "VIEW ALL AUTHOR"),
+    EXIT("EXIT", "Close the application"),
     UNDEFINED("", "OPTION NOT FOUND");
 
     private final String option;

@@ -8,6 +8,10 @@ import com.sda.nicurosu.bms.repository.BookRepository;
 import com.sda.nicurosu.bms.repository.BookRepositoryImpl;
 import com.sda.nicurosu.bms.service.exceptions.AuthorNotFoundException;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
@@ -40,6 +44,29 @@ public class BookServiceImpl implements BookService {
             bookRepository.createBook(book);
         } else {
             throw new AuthorNotFoundException("Author not found", authorId);
+        }
+    }
+
+    @Override
+    public void importBooksFromFile() {
+        Path bookFileAbsolutePath = Paths.get("C:\\Users\\Rosu\\Documents\\book-management-system-sda\\data\\books.txt");
+        try {
+            Files.lines(bookFileAbsolutePath)
+                    .filter(line -> line != null)
+                    .filter(line -> !line.isEmpty())
+                    .skip(1)
+                    .forEach(line -> {
+                        try {
+                            String[] elements = line.split("\\|");
+                            createBook(elements[0], elements[1], elements[2], Integer.parseInt(elements[3]));
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+
+                        }
+                    });
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
