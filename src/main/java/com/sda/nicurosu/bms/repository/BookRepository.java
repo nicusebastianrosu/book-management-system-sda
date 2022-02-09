@@ -6,7 +6,7 @@ public interface BookRepository extends BaseRepository<Book, Integer> {
 
     void createBook(Book book);
 
-    // Book findById(Integer id);
+    Book findByIdAndLoadReviews(Integer id);
 
 
 }

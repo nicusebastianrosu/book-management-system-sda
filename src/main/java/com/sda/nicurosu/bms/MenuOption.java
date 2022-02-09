@@ -9,6 +9,7 @@ public enum MenuOption {
     UPDATE_AUTHOR("6", "UPDATE AUTHOR"),
     DELETE_AUTHOR("7", "DELETE AUTHOR"),
     ADD_REVIEW("8", "ADD REVIEW"),
+    VIEW_REVIEWS_FOR_BOOK("9", "VIEW REVIEWS FOR BOOK"),
     EXIT("EXIT", "Close the application"),
     UNDEFINED("", "OPTION NOT FOUND");
 

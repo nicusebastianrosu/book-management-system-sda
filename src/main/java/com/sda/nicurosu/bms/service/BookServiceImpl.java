@@ -2,15 +2,18 @@ package com.sda.nicurosu.bms.service;
 
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
+import com.sda.nicurosu.bms.model.Review;
 import com.sda.nicurosu.bms.repository.AuthorRepository;
 import com.sda.nicurosu.bms.repository.AuthorRepositoryImpl;
 import com.sda.nicurosu.bms.repository.BookRepository;
 import com.sda.nicurosu.bms.repository.BookRepositoryImpl;
 import com.sda.nicurosu.bms.service.exceptions.AuthorNotFoundException;
+import com.sda.nicurosu.bms.service.exceptions.BookNotFountException;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class BookServiceImpl implements BookService {
 
@@ -68,5 +71,16 @@ public class BookServiceImpl implements BookService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Review> getReviewsForBook(Integer bookId) throws BookNotFountException {
+        Book book = bookRepository.findByIdAndLoadReviews(bookId);
+        if (book != null) {
+            return book.getReviews();
+        } else {
+            throw new BookNotFountException("not found book", bookId);
+        }
+
     }
 }

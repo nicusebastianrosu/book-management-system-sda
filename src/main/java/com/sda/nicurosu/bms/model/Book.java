@@ -26,7 +26,8 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    @OneToMany(mappedBy = "book")
+    // @OneToMany(mappedBy = "book", fetch = FetchType.EAGER) // asa nu
+    @OneToMany(mappedBy = "book") // asa da
     private List<Review> reviews;
 
     public Book() {

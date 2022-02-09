@@ -67,6 +67,9 @@ public class Main {
                 case ADD_REVIEW:
                     reviewController.addReview();
                     break;
+                case VIEW_REVIEWS_FOR_BOOK:
+                    reviewController.getReviewForBook();
+                    break;
                 case EXIT:
                     System.out.println("Finish, bye, bye");
                     break;
