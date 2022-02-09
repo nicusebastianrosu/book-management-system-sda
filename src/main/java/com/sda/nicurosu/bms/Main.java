@@ -1,9 +1,6 @@
 package com.sda.nicurosu.bms;
 
-import com.sda.nicurosu.bms.controller.AuthorController;
-import com.sda.nicurosu.bms.controller.AuthorControllerImpl;
-import com.sda.nicurosu.bms.controller.BookController;
-import com.sda.nicurosu.bms.controller.BookControllerImpl;
+import com.sda.nicurosu.bms.controller.*;
 import com.sda.nicurosu.bms.model.Author;
 import com.sda.nicurosu.bms.model.Book;
 import com.sda.nicurosu.bms.model.Review;
@@ -32,6 +29,8 @@ public class Main {
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
+        ReviewController reviewController = new REviewControllerImpl();
+
         System.out.println("Booking Management is Running! Starting !!!");
 
         String option = null;
@@ -64,6 +63,9 @@ public class Main {
                     break;
                 case DELETE_AUTHOR:
                     authorController.deleteAuthor();
+                    break;
+                case ADD_REVIEW:
+                    reviewController.addReview();
                     break;
                 case EXIT:
                     System.out.println("Finish, bye, bye");
