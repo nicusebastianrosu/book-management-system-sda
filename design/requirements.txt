@@ -40,3 +40,9 @@ TASKS:
 -BMS-14  : Create Entity User CRUD
 -BMS-15  : Create Entity Department CRUD
 
+User:
+username, id , firstName, lastName,String phoneNumber si o lista de departamente : departments
+Department:
+id, name , Lista de useri
+Adica , many-to-many.
+
